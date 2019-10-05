@@ -36,22 +36,36 @@ else if (selectHomework == 7)
 {
 alert(`bai 7`);
 const arr = [3,4,6,-9,10,-88,2];
-let checker = true;
-while(checker){
-    let inputStringNum = Number(prompt('Enter a number'));
-    for( i = 0; i < arr.length; i++){
-        if(inputStringNum == Number(arr[i])){
-            alert(`${inputStringNum} is FOUND in my array at index ${i}`);
-            checker = false;
-        } else {
-            alert(`${inputStringNum} is NOT FOUND in my array `);
-        }
-    }
+// let checker = true;
+// while(checker){
+//     let inputStringNum = Number(prompt('Enter a number'));
+//         let i =0;
+//         while(i < arr.length){
+//         if(inputStringNum == Number(arr[i])){
+//             alert(`${inputStringNum} is FOUND in my array at index ${i}`);
+//         } else if(i > arr.length) {
+//             break;
+//         }
+//     }
+//     alert(`${inputStringNum} is NOT FOUND in my array `);
+    
+// }
+// }
+
+
+let inputStringNum = Number(prompt('Enter a number'));
+let indexNum = arr.indexOf(inputStringNum,0);
+if(inputStringNum == arr[indexNum]){
+    alert(`${inputStringNum} is FOUND in my array at index ${indexNum}`)
+} else {
+    alert(`${inputStringNum} is NOT FOUND in my array at index ${indexNum}`)
 }
+
 }
 
 else if (selectHomework == 8);
 {
+alert(`bai 8`);
 let checker = true;
 let SheepSizes = [5,7,350,90,24,50,75];
 console.log(`Hello, this is my sheep sizes :`);
