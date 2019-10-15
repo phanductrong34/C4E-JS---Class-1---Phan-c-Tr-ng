@@ -75,12 +75,22 @@ let inputUser = (prompt('Which Brand')).toLocaleLowerCase();
 let number = (inventoryByBrand[inputUser]).length;
 alert(` There are ${number} generation of ${inputUser} in inventory`); 
 
-alert('bai 5');
+alert('bai 567');
 let inputUser2 = (prompt('Which Brand')).toLocaleLowerCase();
 let number2 = (inventoryByBrand[inputUser2]).length;
-console.log(inventoryByBrand[inputUser2]);
-alert(` There are ${number2} generation of ${inputUser2} in inventory 
-            ${inventoryByBrand[inputUser2]["brand"]}`);
-} 
+let tempArr = [];
+let total = 0;
+for( i = 0; i < number2; i++){
+    let temp = inventoryByBrand[inputUser2][i]["name"];
+    tempArr.push(temp);
+    total += inventoryByBrand[inputUser2][i]["price"];
+}
+let listName = tempArr.join('\n');
 
+alert(` There are ${number} generation of ${inputUser} in inventory
+${listName}
+
+With the total cost of: ${total} $`);
+
+}
 
