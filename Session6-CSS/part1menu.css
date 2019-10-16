@@ -1,0 +1,35 @@
+.menu {
+    background-color:  #D5B0AC;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+nav span {
+    
+    padding-top: 8.5px;
+    font-weight: bold;
+    color:  #402E2A;
+    width: 100px;
+    height: 30px;
+    
+}
+nav span:hover{
+    background-color: #9CD08F;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.menu_vertical {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.menu_vertical span {
+    border:solid 1px white;
+    background-color:  #D5B0AC;
+    
+}
