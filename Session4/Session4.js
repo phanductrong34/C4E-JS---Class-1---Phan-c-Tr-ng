@@ -1042,3 +1042,104 @@ for(let i = 0; i < jobData["hits"].length; i++){
 
 }
 console.log("*************")
+
+
+// turtle excercise
+///////////////////////////// bai 15
+/*
+clear();
+const pos = {
+  x: 200,
+  y: 50,
+}
+
+penup();
+rt(90);
+fd((pos.x)/2);
+lt(90);
+fd(pos.y);
+*/
+//////////////////////////// bai 16
+/*
+clear();
+penup();
+const square = {
+ x: 100,
+ y: 50,
+ width: 20,
+};
+
+fd(square.y);
+rt(90);
+fd(square.x);
+pendown();
+for(i = 0; i <4; i++){
+ fd(square.width);
+  rt(90);
+}
+*/
+/////////////////////////// bai 17
+/*
+clear();
+penup();
+const rect  = {
+x: 100,
+y: 50,
+width: 20,
+height: 40,
+};
+
+fd(rect.y);
+rt(90);
+fd(rect.x);
+lt(90);
+pendown();
+for(i = 0; i < 2; i++){
+  fd(rect.height);
+  rt(90);
+  fd(rect.width);
+  rt(90);
+}
+
+*/
+////////////////////////////bai 18
+/*
+
+clear();
+const drawing = [{
+shape: 'rect',
+x: 8,
+y: 70,width: 12,
+height: 40,
+},
+{
+shape: 'square',
+x: 20,
+y: 40,
+width: 50,
+}];
+
+for( i = 0; i < drawing.length; i++){
+	home();
+  penup();
+  fd(drawing[i]["y"]);
+  rt(90);
+  fd(drawing[i]["x"]);
+  lt(90);
+  pendown();
+  if(drawing[i]["shape"] == "rect"){
+    for(k = 0; k < 2; k++){
+      fd(drawing[i]["height"]);
+      rt(90);
+      fd(drawing[i]["width"]);
+      rt(90);
+    }
+  }else{
+    for(k = 0; k < 4; k++){
+      fd(drawing[i]["width"]);
+      rt(90);
+    }
+  }
+}
+/*
+  
