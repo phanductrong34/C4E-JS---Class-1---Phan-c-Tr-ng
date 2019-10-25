@@ -1,4 +1,5 @@
-// 3.c 
+// bai 1
+// 1d 2a 3d 4b
 
 //bai 2
 // {
@@ -226,7 +227,7 @@ let itemlist = document.getElementById("itemList");
 
 function reloadData() { //insert vafo html ds item
     for (let i = 0; i < itemArr.length; i++) {
-        itemlist.insertAdjacentHTML("beforeend", `<div><li class = "itemhoho">${itemArr[i]}</li> <button class="btn_delete">Delete</button></div>`)
+        itemlist.insertAdjacentHTML("beforeend", `<div><li>${itemArr[i]}</li> <button class="btn_delete">Delete</button></div>`)
     }
     // console.log(itemlist);
 }
@@ -244,14 +245,17 @@ function addItem() {
     let x = document.getElementById("addItem").value;
     console.log(` Item ${x} has been add`);
     itemArr.push(x);
-    itemlist.insertAdjacentHTML("beforeend", `<li class = "itemhoho">${itemArr[itemArr.length-1]}</li><button class ="btn_delete">Delete</button>`)
+    itemlist.insertAdjacentHTML("beforeend", `<div><li>${itemArr[itemArr.length-1]}</li> <button class="btn_delete">Delete</button></div>`)
     console.log(itemArr);
     document.getElementById("addItem").value = "";
+    console.log(itemlist);
 
 }
 
+
 function deleteItem() {
-    var btn_delete = document.getElementsByClassName("btn_delete");// nó sẽ ra một string các thẻ thỏa mãn class ấy từ trên xuống dưới đúng index,btn_delete h là một mảng HTMLColection
+    var btn_delete = document.getElementsByClassName("btn_delete");
+    console.log(btn_delete);  // nó sẽ ra một string các thẻ thỏa mãn class ấy từ trên xuống dưới đúng index,btn_delete h là một mảng HTMLColection
     for (let i = 0; i < btn_delete.length; i++) { //vòng lặp để thêm hàn loạt sự kiện vào từng nút, nó cài rồi,chỉ chờ click thôi
         let deleteButton = btn_delete[i];
         deleteButton.addEventListener('click', (e) => {
@@ -266,7 +270,7 @@ function deleteItem() {
 
         });
     }
-    console.log(btn_delete);
+   
     
 
 }
