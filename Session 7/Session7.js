@@ -182,42 +182,96 @@ x.addEventListener("click",() =>{
 }
 
 //bai 12 lan 2
-{
-    let itemArr = ["Back-Pack","MiBand Watch","Ring"];
-    console.log(itemArr);
-    let itemlist = document.getElementById("itemList");
-    console.log(itemlist);
-    function reloadData() {
-        for(let i = 0; i < itemArr.length; i ++){
-            itemlist.insertAdjacentHTML("beforeend",`<li class = "itemhoho">${itemArr[i]}</li> <button onclick = "deleteItem(${i})">Delete</button>`)
-            }
-            console.log(itemlist);
+// {
+//     let itemArr = ["Back-Pack","MiBand Watch","Ring"];
+//     console.log(itemArr);
+//     let itemlist = document.getElementById("itemList");
+//     console.log(itemlist);
+//     function reloadData() {
+//         for(let i = 0; i < itemArr.length; i ++){
+//             itemlist.insertAdjacentHTML("beforeend",`<li class = "itemhoho">${itemArr[i]}</li> <button onclick = "deleteItem(${i})">Delete</button>`)
+//             }
+//             console.log(itemlist);
         
-    }
-    reloadData();
+//     }
+//     reloadData();
     
-    function addItem() {
-        console.log("Button Clicked");
-        let x = document.getElementById("addItem").value;
-        console.log(` Item ${x} has been add`);
-        itemArr.push(x);
-        itemlist.insertAdjacentHTML("beforeend",`<li class = "itemhoho">${itemArr[itemArr.length-1]}</li><button onclick = "deleteItem(${itemArr.length-1})">Delete</button>`)
-        console.log(itemArr);
-        document.getElementById("addItem").value = "";
+//     function addItem() {
+//         console.log("Button Clicked");
+//         let x = document.getElementById("addItem").value;
+//         console.log(` Item ${x} has been add`);
+//         itemArr.push(x);
+//         itemlist.insertAdjacentHTML("beforeend",`<li class = "itemhoho">${itemArr[itemArr.length-1]}</li><button onclick = "deleteItem(${itemArr.length-1})">Delete</button>`)
+//         console.log(itemArr);
+//         document.getElementById("addItem").value = "";
         
-    }
-    function deleteItem(x){
-            console.log(`delete item ${x}`);
-            itemArr.splice(x,1);
-            console.log(itemArr);
+//     }
+//     function deleteItem(x){
+//             console.log(`delete item ${x}`);
+//             itemArr.splice(x,1);
+//             console.log(itemArr);
     
             
-            reloadData();
+//             reloadData();
        
         
+//     }
+// }
+
+{
+let itemArr = ["Back-Pack", "MiBand Watch", "Ring"];
+// console.log(itemArr);
+let itemlist = document.getElementById("itemList");
+// console.log(itemlist);
+
+function reloadData() { //insert vafo html ds item
+    for (let i = 0; i < itemArr.length; i++) {
+        itemlist.insertAdjacentHTML("beforeend", `<div><li class = "itemhoho">${itemArr[i]}</li> <button class="btn_delete">Delete</button></div>`)
+    }
+    // console.log(itemlist);
+}
+reloadData();
+
+function loadData() {
+    for (let i = 0; i < itemArr.length; i++) {
+        console.log(itemArr[i]);
     }
 }
+loadData()
 
+function addItem() {
+    console.log("Button Clicked");
+    let x = document.getElementById("addItem").value;
+    console.log(` Item ${x} has been add`);
+    itemArr.push(x);
+    itemlist.insertAdjacentHTML("beforeend", `<li class = "itemhoho">${itemArr[itemArr.length-1]}</li><button class ="btn_delete">Delete</button>`)
+    console.log(itemArr);
+    document.getElementById("addItem").value = "";
+
+}
+
+function deleteItem() {
+    var btn_delete = document.getElementsByClassName("btn_delete");// nó sẽ ra một string các thẻ thỏa mãn class ấy từ trên xuống dưới đúng index,btn_delete h là một mảng HTMLColection
+    for (let i = 0; i < btn_delete.length; i++) { //vòng lặp để thêm hàn loạt sự kiện vào từng nút, nó cài rồi,chỉ chờ click thôi
+        let deleteButton = btn_delete[i];
+        deleteButton.addEventListener('click', (e) => {
+            console.log(e.target); // cho biet nut delete nao dang duoc click, e.target để đọc đúng cái thẻ đang đc click nhờ đăng kí event
+            console.log(` delete item ${i}`)
+            var btn = e.target;//target vào đúng chỗ khỏi cần biết index
+            var div = btn.parentNode; // lay ra thẻ div chưa nút xóa và thẻ li chứa dữ liệu để mình xóa cả cặp,parentNode để lấy cái thẻ Parent trên nó một cấp
+            div.remove()
+            console.log(itemArr);
+
+
+
+        });
+    }
+    console.log(btn_delete);
+    
+
+}
+ deleteItem()
+}
 
      
 
