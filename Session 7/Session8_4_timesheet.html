@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time sheet</title>
+
+</head>
+<body>
+    <div>
+        <input type="text" id="enterProject" placeholder="Enter project">
+        <input type="text" id="enterTask" placeholder="Enter Task">
+        <input type="text" id="enterTime" placeholder="Enter Time">
+        <button id="addbtn" onclick="getInfo()">Add Row</button>
+            <table id="table" border="1px"> 
+                <thead align="center">
+                    <th>Project</th>
+                    <th>Task</th>
+                    <th>Time Spent</th>
+                    <th>Action</th>
+                </thead>
+                <tbody align="center" id="tbody">
+                    <tr>
+                        <td>Project test 1</td>
+                        <td>Task 1</td>
+                        <td>0</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    <script src="Session8_4_timesheet.js"></script>
+</body>
+</html>
