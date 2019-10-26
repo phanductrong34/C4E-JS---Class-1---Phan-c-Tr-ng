@@ -1,0 +1,33 @@
+button {
+    display: inline-block;
+    border: 5px;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    color: solid black;
+    background-color: paleturquoise;
+
+}
+#P {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center
+    
+
+}
+#C {
+    background-color:pink;
+    padding: 5px;
+    box-sizing: border-box;
+
+}
+button:hover{
+    border:3px cyan;
+    background-color:rgb(255, 40, 40) ;
+    width: 35px;
+    height: 35px;
+    transition : all .3s;
+    
+}
+
