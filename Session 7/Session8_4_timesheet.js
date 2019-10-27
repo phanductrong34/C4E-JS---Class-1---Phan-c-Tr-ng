@@ -17,12 +17,17 @@
         Cell.innerHTML = tableData[k][dem];
         } 
         dem++;
+        newRow.insertCell(3).innerHTML = `<button class= "btn_delete" id= "${i}" onclick = "deleteRow(this)">x</button>`;
+        
         }
 
-        function addAction(i) {
-            
-            
-        }
+
+function deleteRow(r){
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("table").deleteRow(i)
+}
+
+adEvent();
     function getInfo() {
         let a = document.getElementById("enterProject").value;
         console.log(a);
@@ -42,7 +47,10 @@
             let Cell = endRow.insertCell(k);
             Cell.innerHTML = tableData[k][end-1];
             } 
+        endRow.insertCell(3).innerHTML = `<button onclick = "deleteRow(this)" class = "btn_delete" id= "${end}" >x</button>`;
         }
+    
+
 
         
     
